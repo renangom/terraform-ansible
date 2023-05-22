@@ -14,17 +14,11 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-resource "aws_instance" "name" {
+resource "aws_instance" "terraform-ansible-python" {
   ami           = "ami-03d5c68bab01f3496"
   instance_type = "t2.micro"
   key_name      = "iac-renan"
-  #   user_data     = <<-EOF
-  #                     #!/bin/bash
-  #                     cd /home/ubuntu
-  #                     echo "<h1> Olá Mundo </h1>" > index.html
-  #                     nohup busybox httpd -f -p 8080 &
-  #                     EOF
   tags = {
-    Name = "TesteAWS"
+    Name = "PythonAWS"
   }
 }
